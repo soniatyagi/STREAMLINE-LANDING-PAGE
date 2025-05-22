@@ -1,0 +1,91 @@
+@tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer base {
+      :root {
+        --background: 0 0% 2%; /* Even darker black for main background */
+        --foreground: 0 0% 98%;
+        --card: 220 15% 8%; /* Darker blueish gray for cards */
+        --card-foreground: 0 0% 98%;
+        --popover: 220 15% 8%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 145 63% 49%; /* Vibrant Green */
+        --primary-foreground: 0 0% 10%; /* Darker text for green buttons */
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+        --accent: 145 70% 55%; /* Lighter green for accents */
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 72% 51%; /* Slightly adjusted destructive red */
+        --destructive-foreground: 0 0% 98%;
+        --border: 210 15% 20%; /* Darker, subtle border */
+        --input: 210 15% 20%;
+        --ring: 145 63% 49%; /* Green for focus rings */
+        --radius: 0.75rem; 
+      }
+    
+      .dark {
+        --background: 220 20% 5%; /* Very Deep dark blue/almost black */
+        --foreground: 0 0% 98%;
+        --card: 220 15% 10%; 
+        --card-foreground: 0 0% 98%;
+        --popover: 220 20% 5%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 145 63% 49%;
+        --primary-foreground: 0 0% 10%;
+        --secondary: 220 15% 18%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 220 15% 18%;
+        --muted-foreground: 0 0% 60%;
+        --accent: 145 70% 55%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 220 15% 22%;
+        --input: 220 15% 22%;
+        --ring: 145 63% 49%;
+      }
+    }
+     
+    @layer base {
+      * {
+        @apply border-border;
+      }
+      body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold; /* Changed from bold to semibold for a slightly softer look */
+      }
+      h1 { @apply tracking-tight; }
+      h2 { @apply tracking-tight; }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px; /* Slimmer scrollbar */
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--background) / 0.3); /* More transparent track */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: hsl(var(--primary) / 0.6); /* Slightly more transparent thumb */
+      border-radius: var(--radius);
+      border: 1px solid hsl(var(--background) / 0.3); /* Thinner border */
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary) / 0.8); /* Darken on hover */
+    }
+    
+    .font-inter {
+      font-family: 'Inter', sans-serif;
+    }
